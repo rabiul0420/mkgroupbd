@@ -151,14 +151,14 @@
                     <div class="icon">
                         @if(file_exists($service->icon))
                         <img src="{{ asset($service->icon) }}" alt="" class="img-responsive" height="40" width="40">
-                        @else   
+                        @else
                         <img src="{{ asset('assets/common/images/settings.png') }}" alt="" class="img-responsive" height="40" width="40">
                         @endif
                     </div>
                     <h4><a href="">{{ $service->name }}</a></h4>
                     <p>{{ strLimit($service->short_note,200) ?? '' }}</p>
-                    <button type="button" data-id="{{ $service->id }}"
-                        class="btn btn-info btn-sm view-service-details mt-3">View Details</button>
+                    <a href="{{ url('service/'.$service->id) }}"
+                        class="btn btn-info btn-sm view-service-details mt-3">View Details</a>
                 </div>
             </div>
             @endforeach

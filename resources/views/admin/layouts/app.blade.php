@@ -47,7 +47,7 @@
 
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin/vendors/css/calendars/fullcalendar.min.css') }}">
 
-        
+
     <style>
         /*--------------------------------------------------------------
 # Preloader
@@ -185,11 +185,13 @@
             </a></li>
     </ul>
     <ul class="main-search-list-defaultlist-other-list d-none">
-        <li class="auto-suggestion justify-content-between"><a
+        <li class="auto-suggestion justify-content-between">
+            <a
                 class="d-flex align-items-center justify-content-between w-100 py-50">
                 <div class="d-flex justify-content-start"><span class="mr-75"
                         data-feather="alert-circle"></span><span>No results found.</span></div>
-            </a></li>
+            </a>
+        </li>
     </ul>
 
     <div class="main-menu menu-fixed menu-light menu-accordion menu-shadow" data-scroll-to-active="true">
@@ -249,8 +251,8 @@
 
     {{-- <script>
         $(window).on('load', function() {
-            
-            
+
+
         })
     </script> --}}
 

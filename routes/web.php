@@ -6,6 +6,10 @@ use Illuminate\Support\Facades\Session;
 
 // Website Part
 Route::get('/','HomePageController@index')->name('home');
+Route::get('service/{id}','HomePageController@service');
+Route::get('contact-us','HomePageController@contact_us');
+Route::get('about-us','HomePageController@about_us');
+Route::get('services','HomePageController@services');
 Route::post('send-contact-message','HomePageController@storeMessage')->name('send-contact-message');
 
 
@@ -25,6 +29,7 @@ Route::namespace('Admin')->group(function() {
         Route::resource('clients','ClientController');
         Route::resource('sister-concerns','SisterConcernController');
         Route::resource('our-services','ServiceController');
+        Route::resource('pages','PageController');
         Route::resource('payment-methods','PaymentMethodController');
         Route::resource('expense-categories','ExpenseCategoryController');
         Route::resource('expense-list','ExpenseController');

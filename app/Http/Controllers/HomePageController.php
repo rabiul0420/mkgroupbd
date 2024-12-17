@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\SendMail;
+use App\Models\OurService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -11,6 +12,27 @@ class HomePageController extends Controller
     public function index() {
         return view('website.pages.home');
     }
+
+    public function service($id) {
+        $service = OurService::find($id);
+        return view('website.pages.service', compact('service'));
+    }
+
+    public function about_us() {
+        return view('website.pages.about_us');
+    }
+
+    public function services() {
+        return view('website.pages.services');
+    }
+
+    public function contact_us() {
+        return view('website.pages.contact_us');
+    }
+
+
+
+
 
     public function storeMessage(Request $request) {
         $this->validate($request,[
@@ -36,7 +58,7 @@ class HomePageController extends Controller
         $mailSent = Mail::to(siteSetting()['email'])->send(new SendMail($mail_data));
         try {
             $mailSent = Mail::to(siteSetting()['email'])->send(new SendMail($mail_data));
-        
+
             if (!$mailSent) {
                 return response()->json([
                     'status' => 'success',
@@ -51,7 +73,7 @@ class HomePageController extends Controller
         } catch (\Exception $e) {
             // Log the exception
             \Log::error('Mail sending failed: ' . $e->getMessage());
-        
+
             // Return an error response
             return response()->json([
                 'status' => 'error',

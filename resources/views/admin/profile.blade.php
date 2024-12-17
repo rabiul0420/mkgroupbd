@@ -155,6 +155,7 @@
                                         </tr>
                                     </table>
                                 </div>
+                                @php print_r($user->menu_ids) @endphp
                                 <div class="col-12">
                                     <h6 class="py-1 mx-1 mb-0 font-medium-2">
                                         <i data-feather="lock" class="font-medium-3 mr-25"></i>

@@ -70,7 +70,7 @@ class BasicController extends Controller
         $setting_data['linkedin_url'] = $request->linkedin_url ?? '';
         $setting_data['instagram_url'] = $request->instagram_url ?? '';
         $newJsonString = json_encode($setting_data, JSON_PRETTY_PRINT);
-        file_put_contents(base_path('assets/json/site_setting.json'), $newJsonString);
+        file_put_contents(base_path('/public/assets/json/site_setting.json'), $newJsonString);
         return redirect()->route('admin.website-settings')->with(updateMessage());
     }
 

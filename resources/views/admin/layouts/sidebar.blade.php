@@ -105,7 +105,7 @@
                         <span class="menu-item text-truncate" data-i18n="List">Add Product</span>
                     </a>
                 </li>
-                @endif 
+                @endif
                 @if(routePermission('admin.products.index'))
                 <li>
                     <a class="d-flex align-items-center child-menu" href="{{ route('admin.products.index') }}">
@@ -131,7 +131,7 @@
                         <span class="menu-item text-truncate" data-i18n="List">Add Invoice</span>
                     </a>
                 </li>
-                @endif 
+                @endif
                 @if(routePermission('admin.invoices.index'))
                 <li>
                     <a class="d-flex align-items-center child-menu" href="{{ route('admin.invoices.index') }}">
@@ -248,7 +248,7 @@
             </ul>
         </li>
         @endif
-        
+
         @if(menuPermission('Clients'))
         <li class="nav-item parent-menu">
             <a class="d-flex align-items-center" href="#">
@@ -263,7 +263,7 @@
                         <span class="menu-item text-truncate" data-i18n="List">Add Client</span>
                     </a>
                 </li>
-                @endif 
+                @endif
                 @if(routePermission('admin.clients.index'))
                 <li>
                     <a class="d-flex align-items-center child-menu" href="{{ route('admin.clients.index') }}">
@@ -317,7 +317,7 @@
                         <span class="menu-item text-truncate" data-i18n="List">Add Service</span>
                     </a>
                 </li>
-                @endif 
+                @endif
                 @if(routePermission('admin.our-services.index'))
                 <li>
                     <a class="d-flex align-items-center child-menu" href="{{ route('admin.our-services.index') }}">
@@ -329,6 +329,7 @@
             </ul>
         </li>
         @endif
+
 
         @if(menuPermission('Expense'))
         <li class="nav-item parent-menu">

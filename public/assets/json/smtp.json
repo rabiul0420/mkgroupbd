@@ -1,0 +1,10 @@
+{
+    "mail_driver": "smtp",
+    "mail_host": "mail.mkgroupbd.com",
+    "mail_port": "465",
+    "mail_encryption": "ssl",
+    "mail_username": "info@mkgroupbd.com",
+    "mail_password": "MK@G##2019",
+    "mail_from": "info@mkgroupbd.com",
+    "from_name": ""
+}

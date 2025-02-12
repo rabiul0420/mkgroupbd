@@ -55,14 +55,16 @@
             <h1 class="logo"><a href="{{ route('home') }}">{{ siteSetting()['company_name'] }}<span></span></a></h1>
             <!-- <a href="{{ route('home') }}" class="logo"><img src="assets/website/img/logo.png" alt=""></a>-->
 
+
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li><a class="nav-link scrollto active" href="{{ url('/') }}">Home</a></li>
-                    <li><a class="nav-link scrollto" href="{{ url('about-us') }}">About</a></li>
-                    <li><a class="nav-link scrollto" href="{{ url('services') }}">Services</a></li>
-                    <li><a class="nav-link scrollto " href="{{ url('portfolio') }}">Events</a></li>
-                    <li><a class="nav-link scrollto" href="{{ url('team') }}">Team</a></li>
-                    <li><a class="nav-link scrollto" href="{{ url('contact-us') }}">Contact</a></li>
+                    <li><a class="nav-link scrollto {{ (Request::segment(1)=='')?'active':'' }}" href="{{ url('/') }}">Home</a></li>
+                    <li><a class="nav-link scrollto {{ (Request::segment(1)=='about-us')?'active':'' }}" href="{{ url('about-us') }}">About</a></li>
+                    <li><a class="nav-link scrollto {{ (Request::segment(1)=='mission-vission')?'active':'' }}" href="{{ url('mission-vission') }}">Mission & Vission</a></li>
+                    <li><a class="nav-link scrollto {{ (Request::segment(1)=='why-choose-us')?'active':'' }}" href="{{ url('why-choose-us') }}">Why Choose Us</a></li>
+                    <li><a class="nav-link scrollto {{ (Request::segment(1)=='our-commitment')?'active':'' }}" href="{{ url('our-commitment') }}">Our Commitment</a></li>
+                    <li><a class="nav-link scrollto {{ (Request::segment(1)=='services')?'active':'' }}" href="{{ url('services') }}">Services</a></li>
+                   <li><a class="nav-link scrollto {{ (Request::segment(1)=='contact-us')?'active':'' }}" href="{{ url('contact-us') }}">Contact</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->

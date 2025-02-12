@@ -9,6 +9,9 @@ Route::get('/','HomePageController@index')->name('home');
 Route::get('service/{id}','HomePageController@service');
 Route::get('contact-us','HomePageController@contact_us');
 Route::get('about-us','HomePageController@about_us');
+Route::get('mission-vission','HomePageController@mission_vission');
+Route::get('why-choose-us','HomePageController@why_choose_us');
+Route::get('our-commitment','HomePageController@our_commitment');
 Route::get('services','HomePageController@services');
 Route::post('send-contact-message','HomePageController@storeMessage')->name('send-contact-message');
 

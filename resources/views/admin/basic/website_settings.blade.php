@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
 @section('title','Website Settings')
 @push('css')
-    
+
 @endpush
 
 @section('content')
@@ -251,7 +251,25 @@
                                         @enderror
                                     </div>
                                 </div>
-                                
+                                <div class="col-md-12 col-12">
+                                    <div class="form-group">
+                                        <label>Why Choose Us {!! starSign() !!}</label>
+                                        <textarea name="why_choose_us" id="why_choose_us" class="form-control" cols="30" rows="10">{{ old('why_choose_us') ?? siteSetting()['why_choose_us'] ?? '' }}</textarea>
+                                        @error('why_choose_us')
+                                        {!! displayError($message) !!}
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-12">
+                                    <div class="form-group">
+                                        <label>Our Commitment {!! starSign() !!}</label>
+                                        <textarea name="our_commitment" id="our_commitment" class="form-control" cols="30" rows="10">{{ old('our_commitment') ?? siteSetting()['our_commitment'] ?? '' }}</textarea>
+                                        @error('our_commitment')
+                                        {!! displayError($message) !!}
+                                        @enderror
+                                    </div>
+                                </div>
+
                                 <div class="col-12 text-right">
                                     <x-submit-button-component />
                                 </div>
@@ -276,5 +294,11 @@
     CKEDITOR.replace( 'privacy_policy', {
         removePlugins: ['info','image'],
    });
+    CKEDITOR.replace( 'why_choose_us', {
+        removePlugins: ['info','image'],
+    });
+    CKEDITOR.replace( 'our_commitment', {
+        removePlugins: ['info','image'],
+    });
 </script>
 @endpush

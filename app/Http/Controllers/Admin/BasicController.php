@@ -43,6 +43,8 @@ class BasicController extends Controller
             'about_us' => 'required|string|max:5000',
             'mission_vission' => 'required|string|max:5000',
             'privacy_policy' => 'required|string|max:5000',
+            'why_choose_us' => 'required|string|max:5000',
+            'our_commitment' => 'required|string|max:5000',
         ]);
         //return $request;
         $setting_data['company_name'] = $request->company_name ?? '';
@@ -65,6 +67,8 @@ class BasicController extends Controller
         $setting_data['about_us'] = $request->about_us ?? '';
         $setting_data['mission_vission'] = $request->mission_vission ?? '';
         $setting_data['privacy_policy'] = $request->privacy_policy ?? '';
+        $setting_data['why_choose_us'] = $request->why_choose_us ?? '';
+        $setting_data['our_commitment'] = $request->our_commitment ?? '';
         $setting_data['facebook_url'] = $request->facebook_url ?? '';
         $setting_data['twitter_url'] = $request->twitter_url ?? '';
         $setting_data['linkedin_url'] = $request->linkedin_url ?? '';

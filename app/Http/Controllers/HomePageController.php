@@ -22,6 +22,24 @@ class HomePageController extends Controller
         return view('website.pages.about_us');
     }
 
+    public function mission_vission() {
+        $title = "Mission and Vission";
+        return view('website.pages.mission_vission',compact('title'));
+    }
+
+    public function why_choose_us() {
+        $title = "Why Choose Us";
+        return view('website.pages.why_choose_us',compact('title'));
+    }
+
+    public function our_commitment() {
+        $title = "Our Commitment";
+        return view('website.pages.our_commitment',compact('title'));
+    }
+
+
+
+
     public function services() {
         return view('website.pages.services');
     }

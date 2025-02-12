@@ -15,19 +15,14 @@
     <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-            <h2>About</h2>
-            <h3>Find Out More <span>About Us</span></h3>
-            <p>{{ $service->name }}</p>
+            <h2>Service</h2>
+            <h3>{{ $service->name }}</h3>
         </div>
 
         <div class="row">
-            <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
-                <img src="assets/website/img/about.jpg" class="img-fluid" alt="">
-            </div>
-            <div class="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-center" data-aos="fade-up"
+            <div class="pt-4 pt-lg-0 content d-flex flex-column justify-content-center" data-aos="fade-up"
                 data-aos-delay="100">
                 {!! $service->description !!}
-
             </div>
         </div>
 

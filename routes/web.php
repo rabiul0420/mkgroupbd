@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Session;
 // Website Part
 Route::get('/','HomePageController@index')->name('home');
 Route::get('service/{id}','HomePageController@service');
+Route::get('sister-concern/{id}','HomePageController@sister_concern');
 Route::get('contact-us','HomePageController@contact_us');
 Route::get('about-us','HomePageController@about_us');
 Route::get('mission-vission','HomePageController@mission_vission');

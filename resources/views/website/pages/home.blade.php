@@ -34,8 +34,7 @@
                     <p class="description text-justify">
                         {!! strLimit($concern->description,100) !!}
                     </p>
-                    <button type="button" data-id="{{ $concern->id }}"
-                        class="btn btn-info btn-sm view-sister-concern-details">View Details</button>
+                    <a href="{{ url('sister-concern/'.$concern->id ) }}"  data-id="{{ $concern->id }}" class="btn btn-info btn-sm view-sister-concern-details">View Details</a>
                 </div>
             </div>
             @endforeach
@@ -55,13 +54,16 @@
         </div>
 
         <div class="row">
-            <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
-                <img src="assets/website/img/about.jpg" class="img-fluid" alt="">
+            <div class="col-lg-6" data-aos="fade-right" style="padding-right: 30px" data-aos-delay="100">
+                @if(siteSetting()['about_us_image'])
+                    <img src="{{ asset(siteSetting()['about_us_image']) }}" class="img-fluid" alt="">
+                @else
+                    <img src="assets/website/img/about.jpg" class="img-fluid" alt="">
+                @endif
             </div>
             <div class="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-center" data-aos="fade-up"
                 data-aos-delay="100">
-                {!! strLimit(siteSetting()['about_us'],800) ?? '' !!}
-                <button type="button" class="btn btn-info btn-sm about-us-details mt-8 flota-right">Read More..</button>
+                {!! siteSetting()['about_us'] !!}
             </div>
         </div>
 

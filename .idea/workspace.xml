@@ -4,16 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0be5be5-0b8e-4df5-80a0-5b7a7b131bb7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/commandlinetools/Laravel_12_16_24__2_09_PM.xml" beforeDir="false" />
+    <list default="true" id="3f4265ff-6f12-4259-949c-6b0bd6ab180c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/commandlinetools/Laravel_2_1_25__5_21_PM.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/BasicController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/BasicController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomePageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomePageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/json/site_setting.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/json/site_setting.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/basic/website_settings.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/basic/website_settings.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/website/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/website/pages/service.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/pages/service.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/website/pages/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/pages/home.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -126,11 +124,11 @@
       <path value="$PROJECT_DIR$/vendor/psr/log" />
     </include_path>
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;customColor&quot;: &quot;&quot;,
-  &quot;associatedIndex&quot;: 3
-}</component>
-  <component name="ProjectId" id="2sRBnohkeXF9DMK6KiIIGd718lZ" />
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="2syx0UMbfhKwT0wO4A3lflBjguj" />
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
     <option name="autoscrollToSource" value="true" />
@@ -139,18 +137,18 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Main" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml" scope="XML" use_alternative_configuration_file="true" />
@@ -168,15 +166,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c0be5be5-0b8e-4df5-80a0-5b7a7b131bb7" name="Changes" comment="" />
-      <created>1738408676917</created>
+      <changelist id="3f4265ff-6f12-4259-949c-6b0bd6ab180c" name="Changes" comment="" />
+      <created>1739441392583</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1738408676917</updated>
-      <workItem from="1738408677992" duration="663000" />
-      <workItem from="1738599624314" duration="614000" />
-      <workItem from="1739068633888" duration="1324000" />
-      <workItem from="1739093338824" duration="156000" />
+      <updated>1739441392583</updated>
+      <workItem from="1739441393616" duration="3835000" />
     </task>
     <servers />
   </component>

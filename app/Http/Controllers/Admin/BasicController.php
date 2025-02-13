@@ -73,6 +73,23 @@ class BasicController extends Controller
         $setting_data['twitter_url'] = $request->twitter_url ?? '';
         $setting_data['linkedin_url'] = $request->linkedin_url ?? '';
         $setting_data['instagram_url'] = $request->instagram_url ?? '';
+
+
+
+        if ($request->hasFile('about_us_image')) {
+            $file = $request->file('about_us_image');
+            $fileName = md5(uniqid(rand(), true)).'.'.strtolower(pathinfo($file->getClientOriginalName(),PATHINFO_EXTENSION)) ;
+            $destinationPath = 'uploads/' ;
+            $file->move($destinationPath,$fileName);
+            $filePath = $destinationPath.$fileName;
+            $setting_data['about_us_image'] = $filePath;
+        }
+
+
+
+
+
+
         $newJsonString = json_encode($setting_data, JSON_PRETTY_PRINT);
         file_put_contents(base_path('/public/assets/json/site_setting.json'), $newJsonString);
         return redirect()->route('admin.website-settings')->with(updateMessage());

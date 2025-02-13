@@ -21,7 +21,7 @@
                 <x-alert-component />
                 <div class="card">
                     <div class="card-body">
-                        <form action="{{ route('admin.update-website-settings') }}" class="form" method="POST">
+                        <form action="{{ route('admin.update-website-settings') }}" enctype="multipart/form-data" class="form" method="POST">
                             @csrf
                             @method('PUT')
                             <div class="row">
@@ -231,6 +231,20 @@
                                         @error('about_us')
                                         {!! displayError($message) !!}
                                         @enderror
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-12">
+                                    <div class="form-group">
+                                        <label for="customFile">About Us Image </label>
+                                        <div class="custom-file">
+                                            <input name="about_us_image" type="file"
+                                                   class="custom-file-input {!! hasError('icon') !!}" id="customFile"
+                                                   accept=".jpg,.jpeg,.png" />
+                                            <label class="custom-file-label" for="customFile">Choose Image</label>
+                                            @error('icon')
+                                            {!! displayError($message) !!}
+                                            @enderror
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-md-12 col-12">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Mail\SendMail;
 use App\Models\OurService;
+use App\Models\SisterConcern;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -17,6 +18,14 @@ class HomePageController extends Controller
         $service = OurService::find($id);
         return view('website.pages.service', compact('service'));
     }
+
+    public function sister_concern($id) {
+        $sister_concern = SisterConcern::find($id);
+        return view('website.pages.sister_concern', compact('sister_concern'));
+    }
+
+
+
 
     public function about_us() {
         return view('website.pages.about_us');

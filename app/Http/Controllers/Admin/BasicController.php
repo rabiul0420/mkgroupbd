@@ -75,7 +75,7 @@ class BasicController extends Controller
         $setting_data['instagram_url'] = $request->instagram_url ?? '';
 
 
-
+        $setting_data['about_us_image'] = $request->about_us_image_input;
         if ($request->hasFile('about_us_image')) {
             $file = $request->file('about_us_image');
             $fileName = md5(uniqid(rand(), true)).'.'.strtolower(pathinfo($file->getClientOriginalName(),PATHINFO_EXTENSION)) ;
@@ -85,9 +85,16 @@ class BasicController extends Controller
             $setting_data['about_us_image'] = $filePath;
         }
 
+        $setting_data['logo'] = $request->logo_input;
 
-
-
+        if ($request->hasFile('logo')) {
+            $file = $request->file('logo');
+            $fileName = md5(uniqid(rand(), true)).'.'.strtolower(pathinfo($file->getClientOriginalName(),PATHINFO_EXTENSION)) ;
+            $destinationPath = 'uploads/' ;
+            $file->move($destinationPath,$fileName);
+            $filePath = $destinationPath.$fileName;
+            $setting_data['logo'] = $filePath;
+        }
 
 
         $newJsonString = json_encode($setting_data, JSON_PRETTY_PRINT);

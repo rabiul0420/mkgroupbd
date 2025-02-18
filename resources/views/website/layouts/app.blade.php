@@ -52,7 +52,16 @@
     <!-- ======= Header ======= -->
     <header id="header" class="d-flex align-items-center">
         <div class="container d-flex align-items-center justify-content-between">
-            <h1 class="logo"><a href="{{ route('home') }}">{{ siteSetting()['company_name'] }}<span></span></a></h1>
+            <h1 class="logo">
+                <a href="{{ route('home') }}">
+                    @if(siteSetting()['logo'])
+                        <img src="{{ asset(siteSetting()['logo']) }}" alt="">
+                    @else
+                        {{ siteSetting()['company_name'] }}
+                    @endif
+                    <span></span>
+                </a>
+            </h1>
             <!-- <a href="{{ route('home') }}" class="logo"><img src="assets/website/img/logo.png" alt=""></a>-->
 
 
@@ -108,7 +117,7 @@
                         <div class="info-box  mb-4">
                             <i class="bx bx-phone-call"></i>
                             <h3>Call Us</h3>
-                            <p></p>
+                            <p>{{ siteSetting()['mobile'] }}</p>
                         </div>
                     </div>
 
@@ -185,9 +194,9 @@
                     <div class="col-lg-3 col-md-6 footer-links">
                         <h4>Useful Links</h4>
                         <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="{{ url(('/')) }}">Home</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="{{ url('about-us') }}">About us</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="{{ url('services') }}">Services</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
                         </ul>
@@ -196,11 +205,9 @@
                     <div class="col-lg-3 col-md-6 footer-links">
                         <h4>Our Services</h4>
                         <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+                            @foreach (App\Models\OurService::latest()->get() as $service)
+                                <li><i class="bx bx-chevron-right"></i> <a href="{{ url('service/'.$service->id) }}">{{ $service->name }}</a></li>
+                            @endforeach
                         </ul>
                     </div>
 

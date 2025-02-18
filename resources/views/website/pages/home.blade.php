@@ -353,9 +353,10 @@
                 <ul class="faq-list">
                     @foreach(App\Models\Faq::latest()->get() as $faq)
                     <li>
-                        <div data-bs-toggle="collapse" class="{{ $loop->first ? 'collapsed question' : '' }} "
-                            href="#faq{{ $loop->index }}">{{ $faq->question }}<i
-                                class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i>
+                        <div data-bs-toggle="collapse" class="collapsed question" href="#faq{{ $loop->index }}">
+                            {{ $faq->question }}
+                            <i class="bi bi-chevron-down icon-show"></i>
+                            <i class="bi bi-chevron-up icon-close"></i>
                         </div>
                         <div id="faq{{ $loop->index }}" class="collapse" data-bs-parent=".faq-list">
                             <p>
@@ -367,6 +368,9 @@
                 </ul>
             </div>
         </div>
+
+        <i class="bi bi-chevron-down icon-show"></i>
+        <i class="bi bi-chevron-up icon-close"></i>
 
     </div>
 </section><!-- End Frequently Asked Questions Section -->

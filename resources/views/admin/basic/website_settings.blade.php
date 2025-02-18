@@ -36,6 +36,21 @@
                                 </div>
                                 <div class="col-md-4 col-12">
                                     <div class="form-group">
+                                        <label for="customFile">Logo</label>
+                                        <div class="custom-file">
+                                            <input name="logo" type="file"
+                                                   class="custom-file-input {!! hasError('icon') !!}" id="customFile"
+                                                   accept=".jpg,.jpeg,.png" />
+                                            <label class="custom-file-label" for="customFile">Choose Logo</label>
+                                            @error('icon')
+                                            {!! displayError($message) !!}
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <input type="hidden" name="logo_input" value="{{ old('logo') ?? siteSetting()['logo'] ?? '' }}" />
+                                </div>
+                                <div class="col-md-4 col-12">
+                                    <div class="form-group">
                                         <label>Email {!! starSign() !!}</label>
                                         <input type="text" name="email" value="{{ old('email') ?? siteSetting()['email'] ?? '' }}" class="form-control {!! hasError('email') !!}" placeholder="Email" />
                                         @error('email')
@@ -80,7 +95,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-6 col-12">
+                                <div class="col-md-8 col-12">
                                     <div class="form-group">
                                         <label>Site Slogan {!! starSign() !!}</label>
                                         <input type="text" name="site_slogan" value="{{ old('site_slogan') ?? siteSetting()['site_slogan'] ?? '' }}" class="form-control {!! hasError('site_slogan') !!}" placeholder="Site Slogan" />
@@ -245,6 +260,7 @@
                                             {!! displayError($message) !!}
                                             @enderror
                                         </div>
+                                        <input type="hidden" name="about_us_image_input" value="{{ old('about_us_image') ?? siteSetting()['about_us_image'] ?? '' }}" />
                                     </div>
                                 </div>
                                 <div class="col-md-12 col-12">

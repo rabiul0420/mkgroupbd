@@ -110,7 +110,7 @@ class EmployeeController extends Controller
                 $user_permission->activity_id = $activity_id;
                 $user_permission->save();
             }
- 
+
             foreach (MenuActivity::where('is_dependant',"Yes")->get() as $activity) {
                 $menu_id = MenuActivity::find($activity_id)->menu_id;
                 $user_permission = new UserPermission();
@@ -190,7 +190,7 @@ class EmployeeController extends Controller
                 }
             }
          */
-        if ($request->isMethod('PUT')) {  
+        if ($request->isMethod('PUT')) {
             if(is_null($user->password)) {
                 $rules['password'] = 'required|min:6';
             }
@@ -246,7 +246,7 @@ class EmployeeController extends Controller
                 $user_permission->activity_id = $activity_id;
                 $user_permission->save();
             }
- 
+
             foreach (MenuActivity::where('is_dependant',"Yes")->get() as $activity) {
                 $menu_id = MenuActivity::find($activity_id)->menu_id;
                 $user_permission = new UserPermission();
@@ -269,6 +269,7 @@ class EmployeeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        User::findOrFail($id)->delete();
+        return redirect()->route('admin.employees.index')->with(deleteMessage());
     }
 }

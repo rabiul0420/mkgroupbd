@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Models\SisterConcern;
 use App\Http\Controllers\Controller;
+use Intervention\Image\Facades\Image as Image;
+
 
 class SisterConcernController extends Controller
 {
@@ -50,6 +52,7 @@ class SisterConcernController extends Controller
         $row->site_url = $request->site_url;
         $row->description = $request->description;
         $row->status = $request->status;
+        $row->logo = uploadImage($request->file('photo'),'assets/files/sister_concern/photos/');
         $row->save();
         return redirect()->route('admin.sister-concerns.index')->with(savedMessage());
     }
@@ -94,12 +97,15 @@ class SisterConcernController extends Controller
             'description' => 'required|max:5000',
             'status' => 'required|in:0,1'
         ]);
-        
+
         $row = SisterConcern::findOrFail($id);
         $row->name = $request->name;
         $row->site_url = $request->site_url;
         $row->description = $request->description;
         $row->status = $request->status;
+        if($request->file('photo')) {
+            $row->logo = uploadImage($request->file('photo'),'assets/files/sister_concern/photos/');
+        }
         $row->save();
         return redirect()->route('admin.sister-concerns.index')->with(updateMessage());
     }

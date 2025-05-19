@@ -11,6 +11,8 @@ Route::get('sister-concern/{id}','HomePageController@sister_concern');
 Route::get('contact-us','HomePageController@contact_us');
 Route::get('about-us','HomePageController@about_us');
 Route::get('mission-vission','HomePageController@mission_vission');
+Route::get('privacy-policy','HomePageController@privacy_policy');
+Route::get('terms-service','HomePageController@terms_service');
 Route::get('why-choose-us','HomePageController@why_choose_us');
 Route::get('our-commitment','HomePageController@our_commitment');
 Route::get('services','HomePageController@services');
@@ -31,6 +33,7 @@ Route::namespace('Admin')->group(function() {
         Route::resource('invoices','InvoiceController');
         Route::resource('faqs','FaqController');
         Route::resource('clients','ClientController');
+        Route::resource('client-feedbacks','ClientFeedbacksController');
         Route::resource('sister-concerns','SisterConcernController');
         Route::resource('our-services','ServiceController');
         Route::resource('pages','PageController');

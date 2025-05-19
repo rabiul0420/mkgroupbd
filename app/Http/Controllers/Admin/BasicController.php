@@ -62,17 +62,25 @@ class BasicController extends Controller
         $setting_data['client_section_slogan'] = $request->client_section_slogan ?? '';
         $setting_data['contact_us_section_slogan'] = $request->contact_us_section_slogan ?? '';
         $setting_data['newsletter_section_slogan'] = $request->newsletter_section_slogan ?? '';
+        $setting_data['our_social_network_slogan'] = $request->our_social_network_slogan ?? '';
         $setting_data['youtube_video_link'] = $request->youtube_video_link ?? '';
         $setting_data['google_map_url'] = $request->google_map_url ?? '';
+        $setting_data['happy_clients'] = $request->happy_clients ?? '';
+        $setting_data['projects'] = $request->projects ?? '';
+        $setting_data['hours_of_support'] = $request->hours_of_support ?? '';
+        $setting_data['hard_horkers'] = $request->hard_horkers ?? '';
+
         $setting_data['about_us'] = $request->about_us ?? '';
         $setting_data['mission_vission'] = $request->mission_vission ?? '';
         $setting_data['privacy_policy'] = $request->privacy_policy ?? '';
+        $setting_data['term_of_services'] = $request->term_of_services ?? '';
         $setting_data['why_choose_us'] = $request->why_choose_us ?? '';
         $setting_data['our_commitment'] = $request->our_commitment ?? '';
         $setting_data['facebook_url'] = $request->facebook_url ?? '';
         $setting_data['twitter_url'] = $request->twitter_url ?? '';
         $setting_data['linkedin_url'] = $request->linkedin_url ?? '';
         $setting_data['instagram_url'] = $request->instagram_url ?? '';
+        $setting_data['showing_logo'] = $request->showing_logo ?? '';
 
 
         $setting_data['about_us_image'] = $request->about_us_image_input;

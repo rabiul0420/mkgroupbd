@@ -51,6 +51,20 @@
                                 </div>
                                 <div class="col-md-4 col-12">
                                     <div class="form-group">
+                                        <label for="basicSelect">Are showing logo {!! starSign() !!} </label>
+                                        <select name="showing_logo" class="form-control {!! hasError('showing_logo') !!}"
+                                                id="basicSelect">
+                                            <option value="yes" {{ siteSetting()['showing_logo'] === 'yes' || old('showing_logo') === 'yes' ? 'selected' : '' }}>Yes
+                                            </option>
+                                            <option value="no" {{ siteSetting()['showing_logo'] === 'no' || old('showing_logo') === 'no' ? 'selected' : ''}}>No</option>
+                                        </select>
+                                        @error('status')
+                                        {!! displayError($message) !!}
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-12">
+                                    <div class="form-group">
                                         <label>Email {!! starSign() !!}</label>
                                         <input type="text" name="email" value="{{ old('email') ?? siteSetting()['email'] ?? '' }}" class="form-control {!! hasError('email') !!}" placeholder="Email" />
                                         @error('email')
@@ -187,6 +201,16 @@
 
                                 <div class="col-md-6 col-12">
                                     <div class="form-group">
+                                        <label>Our Social Networks Slogan {!! starSign() !!}</label>
+                                        <input type="text" name="our_social_network_slogan" value="{{ old('our_social_network_slogan') ?? siteSetting()['our_social_network_slogan'] ?? '' }}" class="form-control {!! hasError('our_social_network_slogan') !!}" placeholder="Our Social Networks Slogan" />
+                                        @error('our_social_network_slogan')
+                                        {!! displayError($message) !!}
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-12">
+                                    <div class="form-group">
                                         <label>Company Youtube Video Link</label>
                                         <input type="text" name="youtube_video_link" value="{{ old('youtube_video_link') ?? siteSetting()['youtube_video_link'] ?? '' }}" class="form-control {!! hasError('youtube_video_link') !!}" placeholder="Company Youtube Video Link" />
                                         @error('youtube_video_link')
@@ -239,6 +263,42 @@
                                         @enderror
                                     </div>
                                 </div>
+                                <div class="col-md-3 col-3">
+                                    <div class="form-group">
+                                        <label>Happy Clients{!! starSign() !!}</label>
+                                        <input type="text" name="happy_clients" value="{{ old('happy_clients') ?? siteSetting()['happy_clients'] ?? '' }}" class="form-control {!! hasError('happy_clients') !!}" placeholder="Happy Clients" />
+                                        @error('happy_clients')
+                                        {!! displayError($message) !!}
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-3">
+                                    <div class="form-group">
+                                        <label>Projects{!! starSign() !!}</label>
+                                        <input type="text" name="projects" value="{{ old('projects') ?? siteSetting()['projects'] ?? '' }}" class="form-control {!! hasError('projects') !!}" placeholder="Projects" />
+                                        @error('projects')
+                                        {!! displayError($message) !!}
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-3">
+                                    <div class="form-group">
+                                        <label>Hours Of Support{!! starSign() !!}</label>
+                                        <input type="text" name="hours_of_support" value="{{ old('hours_of_support') ?? siteSetting()['hours_of_support'] ?? '' }}" class="form-control {!! hasError('hours_of_support') !!}" placeholder="Google Map URL" />
+                                        @error('hours_of_support')
+                                        {!! displayError($message) !!}
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-3">
+                                    <div class="form-group">
+                                        <label>Hard Workers{!! starSign() !!}</label>
+                                        <input type="text" name="hard_horkers" value="{{ old('hard_horkers') ?? siteSetting()['hard_horkers'] ?? '' }}" class="form-control {!! hasError('hard_horkers') !!}" placeholder="Hard Workers" />
+                                        @error('hard_horkers')
+                                        {!! displayError($message) !!}
+                                        @enderror
+                                    </div>
+                                </div>
                                 <div class="col-md-12 col-12">
                                     <div class="form-group">
                                         <label>About Us {!! starSign() !!}</label>
@@ -277,6 +337,15 @@
                                         <label>Privacy Policy {!! starSign() !!}</label>
                                         <textarea name="privacy_policy" id="privacy_policy" class="form-control" cols="30" rows="10">{{ old('privacy_policy') ?? siteSetting()['privacy_policy'] ?? '' }}</textarea>
                                         @error('privacy_policy')
+                                        {!! displayError($message) !!}
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-12">
+                                    <div class="form-group">
+                                        <label>Terms of service {!! starSign() !!}</label>
+                                        <textarea name="term_of_services" id="term_of_services" class="form-control" cols="30" rows="10">{{ old('term_of_services') ?? siteSetting()['term_of_services'] ?? '' }}</textarea>
+                                        @error('term_of_services')
                                         {!! displayError($message) !!}
                                         @enderror
                                     </div>

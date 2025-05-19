@@ -276,6 +276,38 @@
         </li>
         @endif
 
+
+
+                <li class="nav-item parent-menu">
+                    <a class="d-flex align-items-center" href="#">
+                        <i data-feather="user-plus"></i>
+                        <span class="menu-title text-truncate">Client Feedbacks</span>
+                    </a>
+                    <ul class="menu-content">
+
+                            <li>
+                                <a class="d-flex align-items-center child-menu" href="{{ route('admin.client-feedbacks.create') }}">
+                                    <i data-feather="circle"></i>
+                                    <span class="menu-item text-truncate" data-i18n="List">Add Client Feedback</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="d-flex align-items-center child-menu" href="{{ route('admin.client-feedbacks.index') }}">
+                                    <i data-feather="circle"></i>
+                                    <span class="menu-item text-truncate" data-i18n="List">Client Feedback List</span>
+                                </a>
+                            </li>
+
+                    </ul>
+                </li>
+
+
+
+
+
+
+
         @if(menuPermission('Sister Concerns'))
         <li class="nav-item parent-menu">
             <a class="d-flex align-items-center" href="#">

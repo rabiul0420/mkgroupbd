@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\SendMail;
+use App\Models\ClientFeedbacks;
 use App\Models\OurService;
 use App\Models\SisterConcern;
 use Illuminate\Http\Request;
@@ -11,7 +12,8 @@ use Illuminate\Support\Facades\Mail;
 class HomePageController extends Controller
 {
     public function index() {
-        return view('website.pages.home');
+        $ClientFeedbacks = ClientFeedbacks::where('status',1)->get();
+        return view('website.pages.home',compact('ClientFeedbacks'));
     }
 
     public function service($id) {
@@ -34,6 +36,16 @@ class HomePageController extends Controller
     public function mission_vission() {
         $title = "Mission and Vission";
         return view('website.pages.mission_vission',compact('title'));
+    }
+
+    public function privacy_policy() {
+        $title = "Privacy policy";
+        return view('website.pages.privacy_policy',compact('title'));
+    }
+
+    public function terms_service() {
+        $title = "Terms of service";
+        return view('website.pages.terms_service',compact('title'));
     }
 
     public function why_choose_us() {

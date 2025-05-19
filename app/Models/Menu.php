@@ -141,6 +141,18 @@ class Menu extends Model
                 ]
             ],
             [
+                'name' => " Client Feedback",
+                'activities' => [
+                    array('activity_name' => 'View Client List', 'route_name' => 'admin.clients.index','is_dependant' => 'No','auto_select' => 'No'),
+                    array('activity_name' => 'Create Client', 'route_name' => 'admin.clients.create','is_dependant' => 'No','auto_select' => 'No'),
+                    array('activity_name' => 'Store Client', 'route_name' => 'admin.clients.store','is_dependant' => 'Yes','auto_select' => 'No'),
+                    array('activity_name' => 'Client Details', 'route_name' => 'admin.clients.Show','is_dependant' => 'No','auto_select' => 'No'),
+                    array('activity_name' => 'Edit Client', 'route_name' => 'admin.clients.edit','is_dependant' => 'No','auto_select' => 'No'),
+                    array('activity_name' => 'Update Client', 'route_name' => 'admin.clients.update','is_dependant' => 'Yes','auto_select' => 'No'),
+                    array('activity_name' => 'Delete Client', 'route_name' => 'admin.clients.destroy','is_dependant' => 'No','auto_select' => 'No'),
+                ]
+            ],
+            [
                 'name' => "Sister Concerns",
                 'activities' => [
                     array('activity_name' => 'View Sister Concern List', 'route_name' => 'admin.sister-concerns.index','is_dependant' => 'No','auto_select' => 'No'),
@@ -242,7 +254,7 @@ class Menu extends Model
                     array('activity_name' => 'Delete Payment Method', 'route_name' => 'admin.payment-methods.destroy','is_dependant' => 'No','auto_select' => 'No'),
                 ]
             ]
-        
+
         );
 
         foreach ($menus as $menu) {

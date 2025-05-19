@@ -54,7 +54,7 @@
         <div class="container d-flex align-items-center justify-content-between">
             <h1 class="logo">
                 <a href="{{ route('home') }}">
-                    @if(siteSetting()['logo'])
+                    @if(isset(siteSetting()['logo']) && isset(siteSetting()['showing_logo']) && (siteSetting()['showing_logo']=='yes'))
                         <img src="{{ asset(siteSetting()['logo']) }}" alt="">
                     @else
                         {{ siteSetting()['company_name'] }}
@@ -168,7 +168,7 @@
     <!-- ======= Footer ======= -->
     <footer id="footer">
 
-        <div class="footer-newsletter">
+        {{--<div class="footer-newsletter">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-6">
@@ -180,7 +180,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>--}}
 
         <div class="footer-top">
             <div class="container">
@@ -197,8 +197,8 @@
                             <li><i class="bx bx-chevron-right"></i> <a href="{{ url(('/')) }}">Home</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="{{ url('about-us') }}">About us</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="{{ url('services') }}">Services</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="{{ url('terms-service') }}">Terms of service</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="{{ url('privacy-policy') }}">Privacy policy</a></li>
                         </ul>
                     </div>
 
@@ -213,7 +213,7 @@
 
                     <div class="col-lg-3 col-md-6 footer-links">
                         <h4>Our Social Networks</h4>
-                        <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
+                        <p>{{ siteSetting()['our_social_network_slogan'] }}</p>
                         <div class="social-links mt-3">
                             @isset(siteSetting()['facebook_url'])
                             <a target="_blank" href="{{ siteSetting()['facebook_url'] }}" class="facebook"><i class="bx bxl-facebook"></i></a>

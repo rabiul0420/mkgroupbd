@@ -321,7 +321,7 @@
                                         </p>
                                         <p>Dear <b>{{ $mail_data['user_name'] ?? "Admin" }}</b>, </p>
                                         <p style="line-height: 20px;">
-                                            
+
                                             {!! $mail_data['body'] !!}
                                         </p>
                                     </div>

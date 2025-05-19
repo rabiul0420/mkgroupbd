@@ -1,5 +1,5 @@
 @extends('admin.layouts.app')
-@section('title',$page_title ?? "Sister Concern")
+@section('title',$page_title ?? "Client")
 @push('css')
 
 @endpush
@@ -9,7 +9,7 @@
     <div class="content-header-left col-md-9 col-12 mb-2">
         <div class="row breadcrumbs-top">
             <div class="col-12">
-                <h2 class="content-header-title float-left mb-0">{{ $page_title ?? "Sister Concern" }}</h2>
+                <h2 class="content-header-title float-left mb-0">{{ $page_title ?? "Client" }}</h2>
             </div>
         </div>
     </div>
@@ -20,7 +20,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <form action="{{ $route }}" class="form" method="POST" id="prevent-form"
+                        <form action="{{ $route }}" class="form" enctype="multipart/form-data" method="POST" id="prevent-form"
                             enctype="multipart/form-data">
                             @csrf
                             @isset($data)
@@ -37,14 +37,14 @@
                                         @enderror
                                     </div>
                                 </div>
+
                                 <div class="col-md-4 col-12">
                                     <div class="form-group">
-                                        <label>Site URL</label>
-                                        <input type="text" name="site_url"
-                                            value="{{ old('site_url') ?? $data->site_url ?? '' }}"
-                                            class="form-control {!! hasError('site_url') !!}"
-                                            placeholder="Website URL" />
-                                        @error('site_url')
+                                        <label>Designation {!! starSign() !!}</label>
+                                        <input type="text" name="designation"
+                                            value="{{ old('mobile') ?? $data->designation ?? '' }}"
+                                            class="form-control {!! hasError('designation') !!}" placeholder="Designation" />
+                                        @error('mobile')
                                         {!! displayError($message) !!}
                                         @enderror
                                     </div>
@@ -52,22 +52,27 @@
 
                                 <div class="col-md-4 col-12">
                                     <div class="form-group">
-                                        <label for="customFile">Photo (Max: 1MB)
-                                            @if(!isset($data))
-                                                {!! starSign() !!}
-                                            @elseif(isset($data) && is_null($data->image))
-                                                {!! starSign() !!}
-                                            @endif
-                                        </label>
+                                        <label for="customFile">Image (Max: 1MB) {!! starSign() !!}</label>
                                         <div class="custom-file">
-                                            <input name="photo" type="file"
-                                                   class="custom-file-input {!! hasError('photo') !!}" id="customFile"
-                                                   accept=".jpg,.jpeg,.png" />
-                                            <label class="custom-file-label" for="customFile">Choose photo</label>
-                                            @error('photo')
+                                            <input name="image" type="file"
+                                                class="custom-file-input {!! hasError('image') !!}" id="customFile" />
+                                            <label class="custom-file-label" for="customFile">Choose Image</label>
+                                            @error('logo')
                                             {!! displayError($message) !!}
                                             @enderror
                                         </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-8 col-12">
+                                    <div class="form-group">
+                                        <label>Client Quote</label>
+                                        <textarea name="client_quote" id="description"
+                                            class="form-control {!! hasError('client_quote') !!}" cols="30" rows="1"
+                                            placeholder="Description">{{ old('client_quote') ?? $data->client_quote ?? '' }}</textarea>
+                                        @error('client_quote')
+                                        {!! displayError($message) !!}
+                                        @enderror
                                     </div>
                                 </div>
 
@@ -75,7 +80,7 @@
                                     <div class="form-group">
                                         <label for="basicSelect">Status {!! starSign() !!}</label>
                                         <select name="status" class="form-control {!! hasError('status') !!}"
-                                            id="basicSelect">
+                                                id="basicSelect">
                                             <option value="1" {{ isset($data) && $data->status === 1 ||
                                                 old('status') === 1 || !isset($data) || empty(old('status')) ? 'selected' : '' }}>Active
                                             </option>
@@ -89,21 +94,8 @@
                                     </div>
                                 </div>
 
-
-                                <div class="col-md-12 col-12">
-                                    <div class="form-group">
-                                        <label>Description {!! starSign() !!}</label>
-                                        <textarea name="description" id="description"
-                                            class="form-control {!! hasError('description') !!}" cols="30" rows="1"
-                                            placeholder="Description">{{ old('description') ?? $data->description ?? '' }}</textarea>
-                                        @error('description')
-                                        {!! displayError($message) !!}
-                                        @enderror
-                                    </div>
-                                </div>
-
                                 <div class="col-12 text-right">
-                                    <a href="{{ route('admin.sister-concerns.index') }}" class="btn btn-info">Back</a>
+                                    <a href="{{ route('admin.clients.index') }}" class="btn btn-info">Back</a>
                                     <x-submit-button-component />
                                 </div>
                             </div>
@@ -117,9 +109,5 @@
 @endsection
 
 @push('js')
-<script>
-    CKEDITOR.replace( 'description', {
-        removePlugins: ['info','image'],
-   });
-</script>
+
 @endpush
